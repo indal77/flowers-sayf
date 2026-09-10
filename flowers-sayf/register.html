@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register · Flowers Sayf</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+  /* Full screen background styling */
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+                url() no-repeat center center/cover;
+    font-family: 'Inter', sans-serif;
+    padding: 20px 0;
+  }
+
+  /* Form card floating over background */
+  .auth-card {
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(8px);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    max-width: 440px;
+    width: 90%;
+  }
+</style>
+</head>
+<body>
+
+  <main class="auth-card">
+    <div class="brand">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="40" height="40">
+        <circle cx="24" cy="24" r="6" fill="#C9A15A"/>
+        <ellipse cx="24" cy="12" rx="7" ry="10" fill="#9C2B45"/>
+        <ellipse cx="24" cy="36" rx="7" ry="10" fill="#9C2B45"/>
+        <ellipse cx="12" cy="24" rx="10" ry="7" fill="#9C2B45"/>
+        <ellipse cx="36" cy="24" rx="10" ry="7" fill="#9C2B45"/>
+      </svg>
+      <span class="brand-name">Flowers Sayf<small>FRESH BOUQUETS DAILY</small></span>
+    </div>
+
+    <h1>Create your account</h1>
+    <p class="lede">Register to start ordering fresh flowers.</p>
+
+    <div id="authToast" class="auth-toast" role="alert"></div>
+
+    <form id="registerForm" novalidate>
+      <div class="field" id="regNameField">
+        <label for="regName">Full name</label>
+        <input type="text" id="regName" name="name" placeholder="Your full name" autocomplete="name" required>
+        <p class="field-error">Please enter your name.</p>
+      </div>
+
+      <div class="field" id="regEmailField">
+        <label for="regEmail">Email address</label>
+        <input type="email" id="regEmail" name="email" placeholder="Enter your email" autocomplete="email" required>
+        <p class="field-error">Please enter a valid email address.</p>
+      </div>
+
+      <div class="field" id="regPasswordField">
+        <label for="regPassword">Password</label>
+        <div class="password-field">
+          <input type="password" id="regPassword" name="password" placeholder="Create a password" autocomplete="new-password" required minlength="6">
+          <button type="button" class="eye-toggle" data-target="regPassword" aria-label="Show password">
+            <svg class="eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            <svg class="eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a19.68 19.68 0 0 1 4.22-5.36M9.9 4.24A10.4 10.4 0 0 1 12 4c7 0 11 8 11 8a19.6 19.6 0 0 1-2.16 3.19M14.12 14.12a3 3 0 1 1-4.24-4.24"/><path d="M1 1l22 22"/></svg>
+          </button>
+        </div>
+        <p class="field-error">Password must be at least 6 characters.</p>
+      </div>
+
+      <div class="field" id="regConfirmField">
+        <label for="regConfirm">Confirm password</label>
+        <div class="password-field">
+          <input type="password" id="regConfirm" name="confirm" placeholder="Re-enter your password" autocomplete="new-password" required>
+          <button type="button" class="eye-toggle" data-target="regConfirm" aria-label="Show password">
+            <svg class="eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            <svg class="eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a19.68 19.68 0 0 1 4.22-5.36M9.9 4.24A10.4 10.4 0 0 1 12 4c7 0 11 8 11 8a19.6 19.6 0 0 1-2.16 3.19M14.12 14.12a3 3 0 1 1-4.24-4.24"/><path d="M1 1l22 22"/></svg>
+          </button>
+        </div>
+        <p class="field-error">Passwords do not match.</p>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+    </form>
+
+    <p class="auth-switch">Already have an account? <a href="login.html">Log in here</a></p>
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
